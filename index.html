@@ -2,51 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-    <link rel="stylesheet" href="css/mian.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>honeycyj</title>
+    <title>BIP39 Encryption Tool</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-    <h1>
-        Honeycyj
-    </h1>
-        <p>你好，我是陈宇，这里是视频中提到的一些链接和地址：</p>
-
-    <h3>Dropbox 下载链接：</h3>
-        <p>https://www.dropbox.com/sh/8ptivyeqmjitzkm/AAAMIB1TJMJzkTnR7GkClBW_a?dl=0   </p>
-
-    <h3>百度网盘下载链接: </h3>
-        <p>链接：https://pan.baidu.com/s/1RisExDicKbRHzeGGRcoDig?pwd=gc7l 
-提取码：gc7l 
---来自百度网盘超级会员V5的分享
-        </p>
-    </div>  
-    
-    <div>
-        <h3>我的联系方式</h3>
-        <p>Wechat:honeycyj</p>
-
-    </div>
-
-    <div>
-        <div class="flex_container">
-            <a href="https://dribbble.com/honeycyj"><div class="connect">
-                <p>Dribbble</p>
-            </div></a>
-            <a href="html/wechat.html" target="_blank"><div class="connect">
-                <p>Wechat</p></a>
-            </div>
-            <a href="https://space.bilibili.com/41466249?spm_id_from=333.1007.0.0">
-            <div class="connect">
-                <p>Bilibili</p>
-            </div></a>
+    <div id="app" class="app-container">
+        <h1>BIP39 Encryption Tool</h1>
+        <div class="input-group">
+            <label for="password">Set your password:</label>
+            <input id="password" type="password" placeholder="Enter your password"/>
+        </div>
+        <div class="input-group">
+            <label for="mnemonic">BIP39 Mnemonic:</label>
+            <textarea id="mnemonic" placeholder="Enter your 12 or 24 word mnemonic here..."></textarea>
+        </div>
+        <div class="output-group">
+            <label for="encryptedMnemonic">Encrypted Mnemonic:</label>
+            <textarea id="encryptedMnemonic" placeholder="Encrypted mnemonic will appear here..."></textarea>
+        </div>
+        <div class="button-group">
+            <button id="encryptBtn" class="button">encryption</button>
+            <button id="decryptBtn" class="button">decryption</button>
         </div>
     </div>
-
+    <div class="info-container">
+        <button id="infoBtn" class="info-button" aria-label="Information">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+        </button>
+        <a href="https://honeycyj.com" class="info-link" target="_blank">honeycyj.com</a>
+    </div>
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <h2>About</h2>
+            <p>明文保存的助记词表可能是整个钱包保存过程中最薄弱的环节，这个小工具用于加密离线的助记词，让你将明文保存的助记词进行多一次加密，让他能更轻松的保存在离线或者在线工具中，你可以在这里下载到工具的离线版本，在完全离网的设备上使用。</p>
+            <span id="tooltip" class="tooltip">币安和okx邮箱地址已复制</span>
+            <button id="closeModal">请我喝杯咖啡</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
