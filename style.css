@@ -142,13 +142,29 @@ button:hover {
 }
 
 h1 {
-    font-size: 72px; /* 增加标题字体大小 */
-    line-height: 0.9; /* 行高缩小为90% */
-    color: #000000; /* 深红色 */
+    font-size: 72px; /* 默认字体大小 */
+    line-height: 0.9;
+    color: #000000;
     text-align: left;
     margin-top: 0px;
-    margin-bottom: 40px; /* 增加标题下方间距 */
-    font-weight: bold; /* 加粗字体 */
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* 添加媒体查询，针对小屏幕设备 */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 48px; /* 在小屏幕上减小字体大小 */
+        margin-bottom: 30px; /* 适当减少下方间距 */
+    }
+}
+
+/* 针对更小的屏幕，如手机 */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 36px; /* 在更小的屏幕上进一步减小字体大小 */
+        margin-bottom: 20px; /* 进一步减少下方间距 */
+    }
 }
 
 h2 {
